@@ -1,32 +1,31 @@
 <template>
   <a-locale-provider :locale="zh_CN">
     <div id="app">
-      <Header></Header>
+      <header />
+      <router-view />
     </div>
   </a-locale-provider>
 </template>
 
 <script>
-import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN'
-import Header from './components/Header'
+import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN';
+import Header from './components/Header';
 
 export default {
   name: 'app',
   data() {
     return {
-      zh_CN,
-    }
+      zh_CN
+    };
   },
   components: {
     Header
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 </style>

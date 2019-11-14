@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   methods: {
     onSearch: function() {
       console.log('search');
@@ -45,7 +45,7 @@ export default {
         padding-right: 56px;
       }
       .ant-input-suffix {
-        right: 0
+        right: 0;
       }
     }
   }

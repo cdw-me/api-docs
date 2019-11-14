@@ -41,10 +41,20 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "prettier/prettier": "error",
+      "no-console": "off",
+      "vue/html-indent": [
+        "error",
+        2
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "postcss": {
     "plugins": {
