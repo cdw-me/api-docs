@@ -28,4 +28,20 @@ export default {
 #app {
   height: 100%;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f2f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d6dfdd;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #b1b9b7;
+}
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #f2f5f4;
+}
 </style>

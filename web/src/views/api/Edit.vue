@@ -91,7 +91,7 @@ export default {
     border-right: 1px solid rgba(0, 0, 0, 0.07);
     background: #fff;
     .ant-layout-sider-children {
-      overflow: auto;
+      overflow: overlay;
     }
   }
   .ant-layout-content {
