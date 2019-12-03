@@ -1,6 +1,13 @@
 <template>
   <div class="i-input">
-    <input ref="input" type="text" :value="value" @input="onInput" @keyup.enter="onEnter" @blur="onBlur" />
+    <input
+      ref="input"
+      type="text"
+      :value="value"
+      @input="onInput"
+      @keyup.enter="onEnter"
+      @blur="onBlur"
+    />
   </div>
 </template>
 
@@ -17,9 +24,7 @@ export default {
     this.$refs.input.focus();
   },
   methods: {
-    onInput: function($event) {
-      
-    },
+    onInput: function($event) {},
     onEnter: function($event) {
       this.$emit('input', $event.target.value);
       this.$emit('enter');

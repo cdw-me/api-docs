@@ -37,11 +37,11 @@ export default {
   background-color: #d6dfdd;
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover{
-    background-color: #b1b9b7;
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b1b9b7;
 }
 ::-webkit-scrollbar-track {
-    border-radius: 4px;
-    background-color: #f2f5f4;
+  border-radius: 4px;
+  background-color: #f2f5f4;
 }
 </style>

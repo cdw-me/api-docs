@@ -1,12 +1,9 @@
 <template>
   <a-layout>
-    <a-layout-header>智能会议系统 API</a-layout-header>
+    <a-layout-header>API</a-layout-header>
     <a-layout>
       <a-layout-sider :width="300">
-        <a-tree
-          :treeData="treeData"
-          :defaultExpandAll="true"
-        />
+        <tree-pro :data="treeData" :openAll="true" @onEdit="onEdit" @onDelete="onDelete" />
       </a-layout-sider>
       <a-layout-content>
         <api-editor />
@@ -30,8 +27,8 @@ const treeData = [
         children: [
           { title: '0-0-0-0', key: '0-0-0-0' },
           { title: '0-0-0-1', key: '0-0-0-1' },
-          { title: '0-0-0-2', key: '0-0-0-2' },
-        ],
+          { title: '0-0-0-2', key: '0-0-0-2' }
+        ]
       },
       {
         title: '0-0-1',
@@ -39,14 +36,14 @@ const treeData = [
         children: [
           { title: '0-0-1-0', key: '0-0-1-0' },
           { title: '0-0-1-1', key: '0-0-1-1' },
-          { title: '0-0-1-2', key: '0-0-1-2' },
-        ],
+          { title: '0-0-1-2', key: '0-0-1-2' }
+        ]
       },
       {
         title: '0-0-2',
-        key: '0-0-2',
-      },
-    ],
+        key: '0-0-2'
+      }
+    ]
   },
   {
     title: '0-1',
@@ -54,15 +51,16 @@ const treeData = [
     children: [
       { title: '0-1-0-0', key: '0-1-0-0' },
       { title: '0-1-0-1', key: '0-1-0-1' },
-      { title: '0-1-0-2', key: '0-1-0-2' },
-    ],
+      { title: '0-1-0-2', key: '0-1-0-2' }
+    ]
   },
   {
     title: '0-2',
-    key: '0-2',
-  },
+    key: '0-2'
+  }
 ];
 import ApiEditor from '../../components/Editor/ApiEditor.vue';
+// import TreePro from 'tree-pro/lib/treePro.umd';
 export default {
   name: 'apiEdit',
   components: {
@@ -74,7 +72,24 @@ export default {
       treeData
     };
   },
-  methods: {}
+  methods: {
+    onEdit: function(data, callback) {
+      let key = data.key;
+      if (!key) {
+        this.addNum = this.addNum || 0;
+        ++this.addNum;
+        key = 'new_' + this.addNum;
+      }
+      setTimeout(function() {
+        callback(true, { key });
+      }, 1000);
+    },
+    onDelete: function(data, callback) {
+      setTimeout(function() {
+        callback(true);
+      }, 1000);
+    }
+  }
 };
 </script>
 

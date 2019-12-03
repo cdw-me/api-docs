@@ -1,7 +1,12 @@
 <template>
   <div class="title" :class="'h' + level">
     <div v-if="!isEdit" @click="isEdit = true">{{ value }}</div>
-    <i-input v-if="isEdit" :value="value" @input="onInput" @enter="isEdit = false" />
+    <i-input
+      v-if="isEdit"
+      :value="value"
+      @input="onInput"
+      @enter="isEdit = false"
+    />
   </div>
 </template>
 
@@ -23,7 +28,7 @@ export default {
   },
   methods: {
     onInput: function(value) {
-      this.$emit('input', value)
+      this.$emit('input', value);
     }
   }
 };

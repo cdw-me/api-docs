@@ -1,6 +1,12 @@
 <template>
   <div class="api-editor">
-    <component :is="'i-' + item.type" v-for="(item, index) in list" :key="index" v-bind="item" v-model="item.value"></component>
+    <component
+      :is="'i-' + item.type"
+      v-for="(item, index) in list"
+      :key="index"
+      v-bind="item"
+      v-model="item.value"
+    ></component>
   </div>
 </template>
 
